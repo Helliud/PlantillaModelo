@@ -6,7 +6,7 @@ in vec4 posicion;
 in vec4 color;
 
 //Uniforms
-uniform mat4 fragmentColor;
+uniform mat4 transformaciones;
 
 //Atributos de salida (Van hacia el fragment shader)
 out vec4 fragmentColor;

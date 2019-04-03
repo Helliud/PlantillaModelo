@@ -2,7 +2,8 @@
 #include "Modelo.h"
 
 Modelo::Modelo() {
-
+	//Establecer transformaciones con una matriz identidad
+	transformaciones = mat4(1.0f);
 
 }
 
@@ -26,7 +27,7 @@ void Modelo::inicializarVertexArray(GLuint posicionID, GLuint colorID, GLuint tr
 	glEnableVertexAttribArray(colorID);
 	//Especificar a OpenGL como se va a comunicar
 	glVertexAttribPointer(posicionID, 4, GL_FLOAT, GL_FALSE, sizeof(Vertice), 0);
-	glVertexAttribPointer(colorID, 4, GL_FLOAT, GL_FALSE, sizeof(Vertice), (void*)sizeof(vec3));
+	glVertexAttribPointer(colorID, 4, GL_FLOAT, GL_FALSE, sizeof(Vertice), (void*)sizeof(vec4));
 
 	//Vertex array y buffer para el cuadrado
 	glGenVertexArrays(1, &vertexArrayID);
